@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous" />
+  <link rel="icon" type="image/png" href="../static/favicon.png" />
+  <link rel="apple-touch-icon" href="../static/faviconiOS.png" />
+  <link rel="stylesheet" href="../static/css/style.css" />
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+    crossorigin="anonymous"></script>
+
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.1.0/socket.io.js"></script>
+
+  <script type="text/javascript" src="../static/js/mqtt.js"></script>
+
+  <title>Aquapagnon</title>
+</head>
+
+<body class="chris">
+  <div class="container-fluid">
+
+    <br />
+
+    <div class="row">
+      <div class="col">
+        <h3 class="section">Etat de mon aquarium</h3>
+
+        <button class="sensor">
+          <h6 id="sensor1" class="mb-0">
+            <strong class="textSensor">25,5°C</strong>
+          </h6>
+        </button>
+
+        <button class="sensor">
+          <h6 id="sensor2" class="mb-0">
+            <strong class="textSensor">6 pH</strong>
+          </h6>
+        </button>
+
+        <button class="sensor">
+          <h6 id="sensor3" class="mb-0">
+            <strong class="textSensor">42 g/L</strong>
+          </h6>
+        </button>
+
+        <button class="sensor">
+          <h6 id="sensor4" class="mb-0">
+            <strong class="textSensor">1 L/min</strong>
+          </h6>
+        </button>
+
+        <button class="sensor">
+          <h6 id="sensor5" class="mb-0">
+            <strong class="textSensor">13 V</strong>
+          </h6>
+        </button>
+      </div>
+    </div>
+
+    <br />
+
+    <div class="row">
+      <!-- Titre de la section -->
+      <h5 class="section">Scenes favorites</h5>
+
+      <div class="col">
+        <button class="scene">
+          <h5 id="FoodingScene" class="mb-0 accessorieNameOff">
+            <img id="FoodingSceneImg" width="64" height="64" src="../static/img/fish-food_off3.png" alt="..." />
+            <strong>Nourriture</strong>
+          </h5>
+        </button>
+
+        <button class="scene">
+          <h5 id="CleaningScene" class="mb-0 accessorieNameOff">
+            <img id="CleaningSceneImg" width="64" height="64" src="../static/img/wipe_off.png" alt="..." />
+            <strong>Nettoyage</strong>
+          </h5>
+        </button>
+      </div>
+    </div>
+
+    <br />
+
+    <div class="row">
+      <h5 class="section">Accesoires</h5>
+
+      <div class="col">
+        <button type="button" class="btn">
+          <div id="fishFood" class="accessorie text-left">
+            <img id="fishFoodImg" width="64" height="64" src="../static/img/fish-food_off3.png" class="ml-3 mt-3"
+              alt="..." />
+
+            <div style="height: 50px; width: auto" class="row ml-3 mr-3 align-items-end">
+              <h5 id="fishFoodName" class="mb-0 accessorieNameOff">
+                <strong>Nourriture</strong>
+              </h5>
+            </div>
+
+            <div style="height: 50px; width: auto" class="row ml-3 mr-3">
+              <h6 id="fishFoodState" class="mb-0 accessorieStatusOff font-weight-bold">
+                Mise à jour
+              </h6>
+            </div>
+          </div>
+        </button>
+
+        <button type="button" class="btn">
+          <div id="deskLamp" class="accessorie text-left">
+            <img id="deskLampImg" width="64" height="64" src="../static/img/led-light_off.png" class="ml-3 mt-3"
+              alt="..." />
+
+            <div style="height: 50px; width: auto" class="row ml-3 mr-3 align-items-end">
+              <h5 id="deskLampName" class="mb-0 accessorieNameOff">
+                <strong>Lumière</strong>
+              </h5>
+            </div>
+
+            <div style="height: 50px; width: auto" class="row ml-3 mr-3">
+              <h6 id="deskLampState" class="mb-0 accessorieStatusOff font-weight-bold">
+                Mise à jour
+              </h6>
+            </div>
+          </div>
+        </button>
+
+        <button type="button" class="btn">
+          <div id="osmolateur" class="accessorie text-left">
+            <img id="osmolateurImg" width="64" height="64" src="../static/img/osmolateur_on.png" class="ml-3 mt-3"
+              alt="..." />
+
+            <div style="height: 50px; width: auto" class="row ml-3 mr-3 align-items-end">
+              <h5 id="osmolateurName" class="mb-0 accessorieNameOff">
+                <strong>Osmolateur</strong>
+              </h5>
+            </div>
+
+            <div style="height: 50px; width: auto" class="row ml-3 mr-3">
+              <h6 id="osmolateurState" class="mb-0 accessorieStatusOff font-weight-bold">
+                Mise à jour
+              </h6>
+            </div>
+          </div>
+        </button>
+
+        <button type="button" class="btn">
+          <div id="heater" class="accessorie text-left">
+            <img id="heaterImg" width="64" height="64" src="../static/img/heater_off.png" class="ml-3 mt-3" alt="..." />
+
+            <div style="height: 50px; width: auto" class="row ml-3 mr-3 align-items-end">
+              <h5 id="heaterName" class="mb-0 accessorieNameOff">
+                <strong>Chauffage</strong>
+              </h5>
+            </div>
+
+            <div style="height: 50px; width: auto" class="row ml-3 mr-3">
+              <h6 id="heaterState" class="mb-0 accessorieStatusOff font-weight-bold">
+                Mise à jour
+              </h6>
+            </div>
+          </div>
+        </button>
+
+        <button type="button" class="btn">
+          <div id="pump" class="accessorie text-left">
+            <img id="pumpImg" width="64" height="64" src="../static/img/pump_off.png" class="ml-3 mt-3" alt="..." />
+
+            <div style="height: 50px; width: auto" class="row ml-3 mr-3 align-items-end">
+              <h5 id="pumpName" class="mb-0 accessorieNameOff">
+                <strong>Pompe</strong>
+              </h5>
+            </div>
+
+            <div style="height: 50px; width: auto" class="row ml-3 mr-3">
+              <h6 id="pumpState" class="mb-0 accessorieStatusOff font-weight-bold">
+                Mise à jour
+              </h6>
+            </div>
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Optional JavaScript; choose one of the two! -->
+
+  <!-- Option 1: Bootstrap Bundle with Popper -->
+  <!-- <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+      crossorigin="anonymous"
+    ></script> -->
+
+  <!-- Option 2: Separate Popper and Bootstrap JS -->
+  <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+    -->
+</body>
+
+</html>
