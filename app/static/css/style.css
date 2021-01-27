@@ -1,0 +1,122 @@
+/* html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  background-image: linear-gradient(180deg, rgb(2, 83, 225), rgb(89, 181, 192));
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+} */
+
+.btn-circle {
+    width: 30px;
+    height: 30px;
+    padding: 6px 0px;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.42857;
+  }
+  
+  .accessorieActive {
+    width: 11rem;
+    height: 11rem;
+    border-radius: 25px;
+    background: white;
+    opacity: 0.9;
+  }
+  
+  .scene {
+    width: 22rem;
+    height: 5.5rem;
+    border-radius: 25px;
+    background: black;
+    opacity: 0.5;
+    mix-blend-mode: darken;
+  }
+  
+  .accessorie {
+    width: 11rem;
+    height: 11rem;
+    border-radius: 25px;
+    background: black;
+    opacity: 0.5;
+    mix-blend-mode: darken;
+  }
+  
+  .sensor {
+    width: 6rem;
+    height: 6rem;
+    border-radius: 3rem;
+    background: transparent;
+    border: 0.1rem solid rgb(199, 199, 199);
+    opacity: 1;
+    /* display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px; */
+    /* mix-blend-mode: darken; */
+  }
+  
+  .accessorie img {
+    opacity: 0.75;
+  }
+  
+  .accessorieNameOn {
+    color: black;
+  }
+  
+  .accessorieNameOff {
+    color: rgb(150, 150, 150);
+  }
+  
+  .accessorieStatusOn {
+    color: rgb(142, 142, 147);
+    font-size: 20px;
+  }
+  
+  .accessorieStatusOff {
+    color: rgb(100, 100, 100);
+    font-size: 20px;
+  }
+  
+  html {
+    height: 100%;
+  }
+  
+  .swiper-container {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .chris {
+    background-image: linear-gradient(180deg, rgb(2, 83, 225), rgb(89, 181, 192));
+    background-attachment: fixed;
+  }
+  
+  .salon {
+    background-image: linear-gradient(180deg, #2ca53d, #99b555);
+  }
+  
+  .roomName {
+    font-size: 48px;
+  }
+  
+  .swiper-slide {
+    height: 100%;
+  }
+  
+  .section {
+    color: white;
+  }
+  
+  .textSensor {
+    color: white;
+  }
+  
+  .resume {
+    color: white;
+  }
+  
