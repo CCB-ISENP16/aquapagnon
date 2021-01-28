@@ -39,11 +39,11 @@ class Outlet:
             msg, topic, self.__name+"-Outlet"))
 
         if msg == "on":
-            self.__state = msg
+            self.__state = msg.upper()
             self.turnOn()
 
         if msg == "off":
-            self.__state = msg
+            self.__state = msg.upper()
             self.turnOff()
 
     def Send(self, topic, msg):
@@ -56,12 +56,14 @@ class Outlet:
         pass
 
     def Stop(self):
-        print("[{}] closed".format("Outlet-"+self.__topic))
+        self.__pi.stop()
+        self.__mqtt.Halt()
+        print("[{}] closed".format(self.__name+"-Outlet"))
 
     def turnOff(self):
         self.__pi.write(self.__pinNumber, pigpio.LOW)
         print("pin set to low level")
-        self.Send("stat/"+self.__topic+"RESULT", self.__state)
+        self.Send("stat/"+self.__topic+"/RESULT", self.__state)
 
     def turnOn(self):
         self.__pi.write(self.__pinNumber, pigpio.HIGH)
