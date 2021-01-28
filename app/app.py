@@ -1,18 +1,19 @@
-import eventlet
 import json
 import re
+import sqlite3
+import subprocess
+
+import eventlet
 from flask import Flask, render_template
 from flask_mqtt import Mqtt
 from flask_socketio import SocketIO
-import subprocess
-import sqlite3
 
 eventlet.monkey_patch()
 
 app = Flask(__name__)
 app.config["SECRET"] = "my secret key"
 app.config["TEMPLATES_AUTO_RELOAD"] = True
-app.config["MQTT_BROKER_URL"] = "192.168.1.18"
+app.config["MQTT_BROKER_URL"] = "127.0.0.1"
 
 app.config["MQTT_BROKER_PORT"] = 1883
 app.config["MQTT_CLIENT_ID"] = ""
@@ -34,11 +35,13 @@ def index():
         "index.html"
     )
 
+
 @app.route("/register")
 def register():
     return render_template(
         "register.html"
     )
+
 
 @socketio.on("publish")
 def handle_publish(json_str):
@@ -71,10 +74,8 @@ def handle_mqtt_message(client, userdata, message):
 def handle_logging(client, userdata, level, buf):
     pass
 
-mqtt.subscribe(topic='stat/SmartSurgeDesk/POWER1')
-mqtt.subscribe(topic='stat/SmartSurgeDesk/POWER2')
-mqtt.subscribe(topic='stat/SmartSurgeDesk/POWER3')
-mqtt.subscribe(topic='stat/SmartSurgeDesk/POWER4')
+mqtt.subscribe(topic='stat/heater/RESULT')
+mqtt.subscribe(topic='stat/light/RESULT')
 
 
 if __name__ == "__main__":
