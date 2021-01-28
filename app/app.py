@@ -76,6 +76,7 @@ def handle_logging(client, userdata, level, buf):
 
 mqtt.subscribe(topic='stat/heater/RESULT')
 mqtt.subscribe(topic='stat/light/RESULT')
+mqtt.subscribe(topic='stat/thermometer/RESULT')
 
 
 if __name__ == "__main__":
