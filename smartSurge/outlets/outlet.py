@@ -16,7 +16,7 @@ class Outlet:
     def __init__(self, topic, name, pinNumber):
         super().__init__()
 
-        self.__state = ""
+        self.__state = "OFF"
         self.__name = name
         self.__topic = topic
         self.__pinNumber = pinNumber
@@ -46,6 +46,9 @@ class Outlet:
             self.__state = msg.upper()
             self.turnOff()
 
+        if msg == "":
+            self.Send("stat/"+self.__topic+"/RESULT", self.__state)
+
     def Send(self, topic, msg):
         self.__mqtt.sendMessage(topic, msg)
 
@@ -68,4 +71,4 @@ class Outlet:
     def turnOn(self):
         self.__pi.write(self.__pinNumber, pigpio.HIGH)
         print("pin set to high level")
-        self.Send("stat/"+self.__topic+"RESULT", self.__state)
+        self.Send("stat/"+self.__topic+"/RESULT", self.__state)
