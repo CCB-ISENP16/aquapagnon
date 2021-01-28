@@ -83,5 +83,12 @@ $(document).ready(function () {
       }
       img.setAttribute("src", imgAttribute);
     }
+
+
+    if (data["topic"] == "stat/thermometer/RESULT") {
+      $("#sensor1").text(data["payload"])
+
+    }
+
   });
 });
