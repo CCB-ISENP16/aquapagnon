@@ -26,7 +26,7 @@ class FS300A (Thread):
         except Exception as ex:
             print("[GPIO] Failed initializing GPIO. Exception: {}".format(ex))
         self.__mqtt = MqttClient(
-            self, "127.0.0.1", ["cmd/"+self.__topic+"/FLOWRATE"], self.__name+"-FS300A")
+            self, "127.0.0.1", ["cmnd/"+self.__topic+"/FLOWRATE"], "Sensor-" + self.__name+"-FS300A")
 
         self.__running = True
         if fakeSensor == True:
@@ -43,12 +43,15 @@ class FS300A (Thread):
 
     def Receive(self, server, topic: str, payload: bytes):
         msg = payload.decode("utf-8")
-        if msg == "":
-            print("[MQTT] {} received at {} from {}".format(
-                msg, topic, self.__name+"-WaterFlowSensor"))
+        print("[MQTT] {} received at {} from {}".format(
+            msg, topic, self.__name+"-WaterFlowSensor"))
 
+        if msg == "":
             self.Send("stat/"+self.__topic+"/RESULT",
                       str(round(self.__flowRate, 1)) + " L/Min")
+        else:
+            self.Send("stat/"+self.__topic+"/RESULT",
+                      str(round(self.__flowRate, 1)))
 
     def Send(self, topic, msg):
         self.__mqtt.sendMessage(topic, msg)
@@ -73,8 +76,8 @@ class FS300A (Thread):
     def Stop(self):
         self.__running = False
         self.join()
+        print("[Thread] {} Stopped".format(self.__name))
         self.__CB.cancel()
+        self.__pi.stop()
+        print("[pigpio] {} Stopped".format(self.__name))
         self.__mqtt.Halt()
-        print("[{}] closed".format("FS300A-"+self.__topic))
-        self.join()
-        print("Stop FS300A")
