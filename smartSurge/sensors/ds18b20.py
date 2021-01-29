@@ -1,9 +1,7 @@
 import json
 import time
 import glob
-from datetime import datetime
 from threading import Thread
-
 
 # from influxdb import InfluxDBClient
 from mqtt.client import MqttClient
@@ -26,17 +24,17 @@ class DS18B20(Thread):
         self.__device_file = self.__device_folder + '/w1_slave'
 
         self.__mqtt = MqttClient(
-            self, "127.0.0.1", ["cmd/"+self.__topic+"/TEMP"], self.__name+"-DS18B20")
+            self, "127.0.0.1", ["cmnd/"+self.__topic+"/TEMP"], "Sensor-"+self.__name+"-DS18B20")
 
         self.__running = True
         self.start()
 
     def Receive(self, server, topic: str, payload: bytes):
         msg = payload.decode("utf-8")
-        if msg == "":
-            print("[MQTT] {} received at {} from {}".format(
-                msg, topic, self.__name+"-WaterFlowSensor"))
+        print("[MQTT] {} received at {} from {}".format(
+            msg, topic, "Sensor-"+self.__name+"-DS18B20"))
 
+        if msg == "":
             self.Send("stat/"+self.__topic+"/RESULT",
                       str(round(self.__temperature, 1)) + " °C")
 
@@ -76,6 +74,5 @@ class DS18B20(Thread):
     def Stop(self):
         self.__running = False
         self.join()
+        print("[Thread] {} Stopped".format(self.__name))
         self.__mqtt.Halt()
-        print("[{}] closed".format("Sensor-"+self.__topic))
-        print("Stop DS18B20")
