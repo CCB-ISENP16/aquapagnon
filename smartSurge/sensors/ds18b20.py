@@ -32,7 +32,13 @@ class DS18B20(Thread):
         self.start()
 
     def Receive(self, server, topic: str, payload: bytes):
-        print("")
+        msg = payload.decode("utf-8")
+        if msg == "":
+            print("[MQTT] {} received at {} from {}".format(
+                msg, topic, self.__name+"-WaterFlowSensor"))
+
+            self.Send("stat/"+self.__topic+"/RESULT",
+                      str(round(self.__temperature, 1)) + " °C")
 
     def Send(self, topic, msg):
         self.__mqtt.sendMessage(topic, msg)
@@ -61,15 +67,15 @@ class DS18B20(Thread):
             return temp_c
 
     def run(self):
-        while True:
+        while self.__running:
             time.sleep(5)
             self.__temperature = self.read_temp()
             self.Send("stat/"+self.__topic+"/RESULT",
                       str(round(self.__temperature, 1)) + " °C")
 
     def Stop(self):
-        self.__mqtt.Halt()
-        print("[{}] closed".format("Sensor-"+self.__topic))
         self.__running = False
         self.join()
+        self.__mqtt.Halt()
+        print("[{}] closed".format("Sensor-"+self.__topic))
         print("Stop DS18B20")
