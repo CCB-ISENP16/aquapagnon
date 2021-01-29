@@ -30,7 +30,7 @@ class Outlet:
             print("[GPIO] Failed initializing GPIO. Exception: {}".format(ex))
 
         self.__mqtt = MqttClient(
-            self, "127.0.0.1", ["cmnd/"+self.__topic+"/POWER"], self.__name+"-Outlet")
+            self, "127.0.0.1", ["cmnd/"+self.__topic+"/POWER"], "Outlet-"+self.__name)
 
     def Receive(self, server, topic: str, payload: bytes):
         msg = payload.decode("utf-8")
@@ -60,8 +60,8 @@ class Outlet:
 
     def Stop(self):
         self.__pi.stop()
+        print("[pigpio] {} Stopped".format(self.__name))
         self.__mqtt.Halt()
-        print("[{}] closed".format(self.__name+"-Outlet"))
 
     def turnOff(self):
         self.__pi.write(self.__pinNumber, pigpio.LOW)
