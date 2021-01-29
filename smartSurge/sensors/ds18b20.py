@@ -37,6 +37,9 @@ class DS18B20(Thread):
         if msg == "":
             self.Send("stat/"+self.__topic+"/RESULT",
                       str(round(self.__temperature, 1)) + " °C")
+        else:
+            self.Send("stat/"+self.__topic+"/RESULT",
+                      str(round(self.__temperature, 1)))
 
     def Send(self, topic, msg):
         self.__mqtt.sendMessage(topic, msg)
