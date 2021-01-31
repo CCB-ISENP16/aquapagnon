@@ -6,6 +6,8 @@ from threading import Thread
 from mqtt.client import MqttClient
 from mqtt.interfaceconnector import IMqttConnector
 
+# https://fr.pinout.xyz/pinout/wiringpi
+
 
 class FS300A (Thread):
     def __init__(self, pinNumber, topic, name, fakeSensor=False):
@@ -39,7 +41,7 @@ class FS300A (Thread):
             time.sleep(1)
             self.getFlowRate()
             self.Send("stat/"+self.__topic+"/RESULT",
-                      str(int(self.__flowRate)) + " L/Min")
+                      str(round(self.__flowRate, 1)) + " L/Min")
 
     def Receive(self, server, topic: str, payload: bytes):
         msg = payload.decode("utf-8")
@@ -63,7 +65,7 @@ class FS300A (Thread):
         pass
 
     def getFlowRate(self):
-        self.__flowRate = (self.__counter * 60 / 5.5)
+        self.__flowRate = (self.__counter / 5.5)
 
     def fakeFlowRate(self):
         print("[FS300A] Start PWM to Fake sensor")
