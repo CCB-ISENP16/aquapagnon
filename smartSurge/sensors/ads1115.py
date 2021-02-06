@@ -39,12 +39,12 @@ class ADS1115():
 
         if topic == "cmnd/"+self.__topic+"/VOLT0":
             self.__voltage0 = self.read_volatage0()
-            self.Send("stat/"+self.__topic+"/RESULT",
+            self.Send("stat/"+self.__topic+"/RESULT0",
                       str(round(self.__voltage0, 2)))
 
         if topic == "cmnd/"+self.__topic+"/VOLT1":
             self.__voltage1 = self.read_volatage1()
-            self.Send("stat/"+self.__topic+"/RESULT",
+            self.Send("stat/"+self.__topic+"/RESULT1",
                       str(round(self.__voltage1, 2)))
 
     def Send(self, topic, msg):
