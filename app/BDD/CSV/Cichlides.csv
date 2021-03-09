@@ -1,0 +1,39 @@
+﻿Nom commun;Genre;Espèce;Origine;Taille cm;pH;Dureté;T°C;Volume en spécifique;Mode de maintenance;Comportement global;Reproduction;Mode de reproduction;Nourriture;Particularité;Photo
+Altum;Pterophyllum;altum;Amazonie;20;acide;douce;26;500;Groupe de 5;Bon;Inconnue;ovipare;omnivore;empty;Photo/AquapagnonLogo.jpg
+Acara bleu;Aequidens;pulcher;Cichlidés d'Amérique centrale;15;acide;douce;25;300;Couple;Satisfaisant;Aisée;ovipare;Proies vivantes;empty;Photo/AquapagnonLogo.jpg
+Acara maroni;Aequidens;maroni;Guyane;10;acide;moyenne;26;300;Groupe de 5;Satisfaisant;Assez facile;ovipare;omnivore;empty;Photo/AquapagnonLogo.jpg
+Agassizi;Apistogramma;agassizi;Amazonie;7;acide;douce;25;200;Couple;Satisfaisant;Possible;ovipare;omnivore;empty;Photo/AquapagnonLogo.jpg
+Apisto perroquet;Apistogramma;cacatuoides;Amazonie;8;acide;douce;26;200;Couple;Bon;Assez facile;ovipare;omnivore;empty;Photo/AquapagnonLogo.jpg
+Astronotus/oscar;Astronomus;ocellatus;Amazonie;20;acide;moyenne;25;500;Couple;Mauvais;Possible;ovipare;tout;Attention il mange tout ce qui peut etre mangé;Photo/AquapagnonLogo.jpg
+Aucun;Apistogramma;nijsseni;Amazonie;8;acide;douce;26;200;Couple;Bon;Possible;ovipare;omnivore;empty;Photo/AquapagnonLogo.jpg
+Borellii;Apistogramma;borellii;Amazonie;8;acide;douce;26;200;Couple;Bon;Possible;ovipare;omnivore;empty;Photo/AquapagnonLogo.jpg
+caeruleus;Labidochromis;caeruleus;Lacs Malawi/Tanganyika;20;basique;dure;26;300;1mâle/4 femelles;Territorial;Aisée;ovipare;omnivore;empty;Photo/AquapagnonLogo.jpg
+Cichlidé aux yeux dorés;Nannacara;anomala;Guyane;6;acide;douce;25;200;Groupe de 5;Satisfaisant;Assez facile;ovipare;omnivore;empty;Photo/AquapagnonLogo.jpg
+Cichlidé d'argent;Vieja;argentera;Cichlidés d'Amérique centrale;30;neutre;moyenne;25;500;Couple;Territorial;Possible;ovipare;omnivore;empty;Photo/AquapagnonLogo.jpg
+Cichlidé doré des lacs;Pseudotropheus;auratus;Lacs Malawi/Tanganyika;10;basique;dure;25;300;Groupe de 5;Territorial;Délicate;ovipare;omnivore;Comportement tres mediocre même envers les poissons inoffensifs;Photo/AquapagnonLogo.jpg
+Cichlidé joyau;Hemichromis;bimaculatus;Ouest africain;13;acide;douce;25;200;Couple;Territorial;Assez facile;ovipare;Proies vivantes;empty;Photo/AquapagnonLogo.jpg
+Cichlidé rouge;Labeotropheus;trewavasae;Lacs Malawi/Tanganyika;10;basique;dure;26;200;Groupe de 5;Territorial;Possible;ovipare;omnivore;empty;Photo/AquapagnonLogo.jpg
+Cichlidé zèbre;Cichlasoma;nigrofasciatum;Cichlidés d'Amérique centrale;12;neutre;moyenne;24;300;Couple;Satisfaisant;Assez facile;ovipare;omnivore;empty;Photo/AquapagnonLogo.jpg
+Cichlidé zèbré du Malawi;Pseudotropheus;zebra;Lacs Malawi/Tanganyika;16;basique;dure;26;300;Couple;Territorial;Délicate;ovipare;Végetarien;empty;Photo/AquapagnonLogo.jpg
+Citrinellum;Amphilophus;citrinellus;Cichlidés d'Amérique centrale;30;neutre;moyenne;25;500;Couple;Territorial;Possible;ovipare;omnivore;empty;Photo/AquapagnonLogo.jpg
+Cyato;Cyathopharinx;furcifer;Lacs Malawi/Tanganyika;15;basique;dure;26;300;Couple;Territorial;Possible;ovipare;omnivore;empty;Photo/AquapagnonLogo.jpg
+Discus;Symphysodon;aequifasciatus;Discus;20;acide;douce;30;500;Groupe de 5;Bon;Possible;ovipare;omnivore;Nécéssite une nourriture variée. Déconseillé aux débutants (vu le prix);Photo/AquapagnonLogo.jpg
+Discus de Heckel;Symphysodon;discus;Discus;20;acide;douce;30;500;Groupe de 5;Bon;Possible;ovipare;omnivore;Nécéssite une nourriture variée. Déconseillé aux débutants (vu le prix);Photo/AquapagnonLogo.jpg
+Dwarf;Haplochromis;strigigena;Egypte;8;neutre;moyenne;24;200;Couple;Satisfaisant;Assez facile;ovipare;omnivore;empty;Photo/AquapagnonLogo.jpg
+Festivum;Cichlasoma;festivum;Amazonie;15;acide;douce;25;500;Couple;Satisfaisant;Délicate;ovipare;omnivore;empty;Photo/AquapagnonLogo.jpg
+Frontosa;Cyphotilapia;frontosa;Lacs Malawi/Tanganyika;35;basique;dure;26;500;Couple;Territorial;Possible;ovipare;omnivore;empty;Photo/AquapagnonLogo.jpg
+fuelleborni;Labeotropheus;fuelleborni;Lacs Malawi/Tanganyika;20;basique;dure;26;300;1mâle/4 femelles;Territorial;Aisée;ovipare;omnivore;empty;Photo/AquapagnonLogo.jpg
+Jack dempsey;Cichlasoma;biocellatum;Amazonie;20;neutre;moyenne;24;500;Couple;Mauvais;Assez facile;ovipare;tout;Attention il mange tout ce qui peut etre mangé;Photo/AquapagnonLogo.jpg
+jacobfreibergi;Aulonocara;jacobfreibergi;Lacs Malawi/Tanganyika;20;basique;dure;26;300;1mâle/4 femelles;Territorial;Aisée;ovipare;omnivore;empty;Photo/AquapagnonLogo.jpg
+Julido à damier;Julidochromis;marlieri;Lacs Malawi/Tanganyika;15;basique;dure;26;200;Couple;Territorial;Possible;ovipare;Proies vivantes;empty;Photo/AquapagnonLogo.jpg
+Kennyi;Pseudotropheus;lombardoi;Lacs Malawi/Tanganyika;13;basique;dure;25;300;Couple;Satisfaisant;Possible;ovipare;omnivore;empty;Photo/AquapagnonLogo.jpg
+Leleupi;Neolamprologus;leleupi;Lacs Malawi/Tanganyika;10;basique;dure;26;200;Groupe de 5;Territorial;Possible;ovipare;omnivore;empty;Photo/AquapagnonLogo.jpg
+Meeki;Cichlasoma;meeki;Cichlidés d'Amérique centrale;12;acide;douce;25;300;Couple;Satisfaisant;Possible;ovipare;Proies vivantes;empty;Photo/AquapagnonLogo.jpg
+mossambicus;Oreochromis;mossambicus;Ouest africain;30;acide;douce;25;500;Couple;Territorial;Assez facile;ovipare;Proies vivantes;empty;Photo/AquapagnonLogo.jpg
+Notatus;Heros;notatus;Cichlidés d'Amérique centrale;25;neutre;moyenne;25;300;Couple;Territorial;Possible;ovipare;omnivore;empty;Photo/AquapagnonLogo.jpg
+Pelmato;Pelvicachromis;pulcher;Ouest africain;10;acide;douce;25;200;Couple;Territorial;Aisée;ovipare;Proies vivantes;empty;Photo/AquapagnonLogo.jpg
+Ramirezi;Papiliochromis;ramirezi;Amazonie;6;acide;douce;26;200;Couple;Bon;Possible;ovipare;omnivore;empty;Photo/AquapagnonLogo.jpg
+Rivulatus;Aequidens;rivulatus;Cichlidés d'Amérique centrale;20;neutre;moyenne;25;300;Couple;Territorial;Possible;ovipare;omnivore;empty;Photo/AquapagnonLogo.jpg
+rostratus;Fossorochromis;rostratus;Lacs Malawi/Tanganyika;20;basique;dure;26;300;1mâle/4 femelles;Territorial;Aisée;ovipare;omnivore;empty;Photo/AquapagnonLogo.jpg
+Scalaire;Pterophyllum;scalare;Amazonie;15;acide;douce;26;300;Groupe de 5;Bon;Aisée;ovipare;omnivore;empty;Photo/AquapagnonLogo.jpg
+Synspilum;Vieja;synspilum;Cichlidés d'Amérique centrale;30;neutre;moyenne;25;500;Couple;Territorial;Possible;ovipare;omnivore;empty;Photo/AquapagnonLogo.jpg
